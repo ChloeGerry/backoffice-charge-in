@@ -1,7 +1,7 @@
+import NavigationLeft from '../../components/NavigationLeft';
+
 const Dashboard = () => {
-    return (
-        <div>dashboard</div>
-    )
-}
+  return <NavigationLeft />;
+};
 
 export default Dashboard;

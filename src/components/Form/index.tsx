@@ -11,6 +11,7 @@ interface Props {
   flexDirection?: string;
   fontSize?: string;
   checked?: boolean;
+  onClick?: () => void;
 }
 
 const Form = ({
@@ -24,6 +25,7 @@ const Form = ({
   fontSize,
   flexDirection,
   checked,
+  onClick,
 }: Props) => {
   return (
     <FormWrapper $flexDirection={flexDirection}>
@@ -35,8 +37,9 @@ const Form = ({
         type={type}
         placeholder={placeholder}
         checked={checked}
+        onClick={onClick}
       />
-      {isInputPassword && <FormEyeIcon src={src} />}
+      {isInputPassword && <FormEyeIcon src={src} alt="Eye icon" />}
     </FormWrapper>
   );
 };
@@ -58,6 +61,7 @@ const FormLabel = styled.label<{ $fontSize?: string }>`
 
 const FormInput = styled.input`
   color: #dce6e5;
+  accent-color: #304399;
   border: 1px solid #dce6e5;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
   padding: 5px 9px;

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Form from '../../components/Form';
 import Button from '../../components/Button';
+import Logo from '../../components/Logo';
 
 interface LoginForm {
   email: string;
@@ -16,13 +17,21 @@ const Login = () => {
   const [formValues, setFormValue] = useState<LoginForm>({
     email: '',
     password: '',
-    isRememberMeChecked: false,
+    isRememberMeChecked: true,
   });
+
   const navigate = useNavigate();
+  const ref = useRef(null);
 
   const handleForm = (event: React.FormEvent<HTMLInputElement>): void => {
     event.preventDefault();
-    console.log('event', event.target);
+
+    const formData: object = {
+      emailInput: ref?.current[0].value,
+      passwordInput: ref?.current[1].value,
+      checkboxInput: ref?.current[2].value,
+    };
+
     navigate('/dashboard');
   };
 
@@ -34,7 +43,7 @@ const Login = () => {
             <LoginIcon src="/assets/left-arrow.svg" />
             <span>Retour vers la page d'accueil</span>
           </LoginNavigationLink>
-          <LoginNavigationLogo src="/assets/logo.svg" />
+          <Logo width="161px" height="34.86px" />
         </LoginNavigation>
       </header>
       <main>
@@ -46,7 +55,7 @@ const Login = () => {
           <LoginModalText>
             Entrez vos identifiants pour accéder à votre espace personnel
           </LoginModalText>
-          <form>
+          <form ref={ref}>
             <Form
               htmlFor="email"
               label="Adresse mail"
@@ -73,7 +82,14 @@ const Login = () => {
                 placeholder=""
                 isInputPassword={false}
                 flexDirection="row-reverse"
-                checked={true}
+                checked={formValues.isRememberMeChecked}
+                onClick={() =>
+                  setFormValue({
+                    email: '',
+                    password: '',
+                    isRememberMeChecked: !formValues.isRememberMeChecked,
+                  })
+                }
                 fontSize="16px"
               />
               <LoginRememberMe>Mot de passe oublié ?</LoginRememberMe>
@@ -109,11 +125,6 @@ const LoginIcon = styled.img`
   padding-right: 10px;
   width: 32px;
   height: 32px;
-`;
-
-const LoginNavigationLogo = styled.img`
-  width: 161px;
-  height: 34.86px;
 `;
 
 const LoginDialog = styled.dialog`
