@@ -1,5 +1,4 @@
 :root {
-  font-family: 'Poppins', sans-serif;
   background-color: #f4f8f6;
   margin: 0;
 }
@@ -9,6 +8,8 @@ body {
   margin: 0;
 }
 
-h1 {
+h1,
+h2,
+h3 {
   font-family: 'Poppins', sans-serif;
 }

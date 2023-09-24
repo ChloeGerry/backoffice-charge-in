@@ -15,6 +15,7 @@ import Cars from './pages/Cars';
 import Accessories from './pages/Accessories';
 import Goals from './pages/Goals';
 import Profile from './pages/Profile';
+import Error from './pages/Error';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/houses" element={<Houses />} />
+      <Route path="/housesInProgress" element={<Houses />} />
       <Route path="/appartments" element={<Appartments />} />
       <Route path="/business" element={<Business />} />
       <Route path="/admins" element={<Admins />} />
@@ -34,6 +35,7 @@ function App() {
       <Route path="/accessories" element={<Accessories />} />
       <Route path="/goals" element={<Goals />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/*" element={<Error />} />
     </Routes>
   );
 }

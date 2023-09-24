@@ -4,11 +4,9 @@ interface Props {
   partTitle: string;
 }
 
-const NavigationPart = ({ partTitle }: Props) => {
+const NavigationPartName = ({ partTitle }: Props) => {
   return <NavigationPartTitle>{partTitle}</NavigationPartTitle>;
 };
-
-export default NavigationPart;
 
 const NavigationPartTitle = styled.span`
   text-transform: uppercase;
@@ -16,4 +14,8 @@ const NavigationPartTitle = styled.span`
   font-size: 15px;
   line-height: 24.6px;
   letter-spacing: 3px;
+  display: block;
+  margin: 12px 0;
 `;
+
+export default NavigationPartName;

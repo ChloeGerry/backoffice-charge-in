@@ -1,15 +1,20 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+
+interface SubMenu {
+  label: string;
+  to: string;
+}
 
 interface Props {
   src: string;
   alt: string;
   linkName: string;
-  subMenu?: Array<object>;
+  subMenu?: Array<SubMenu>;
   backgroundColor?: string;
-  margin?: string;
-  to: string;
-  onClick?: () => void;
+  borderRadius?: string;
+  to?: string;
 }
 
 const NavigationLink = ({
@@ -17,53 +22,65 @@ const NavigationLink = ({
   alt,
   linkName,
   subMenu,
-  backgroundColor,
-  margin,
+  borderRadius,
   to,
-  onClick,
 }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const location = useLocation();
+
   return (
-    <NavigationLinkWrapper $backgroundColor={backgroundColor} $margin={margin}>
-      <NavigationInformations
-        to={to}
-        className={({ isActive }) => (isActive ? 'active' : '')}
+    <>
+      <NavigationButton
+        to={to!}
+        as={subMenu?.length > 0 ? 'div' : NavLink}
+        className={location.pathname === to || isOpen ? 'isSelected' : ''}
+        $borderRadius={borderRadius}
+        onClick={() => subMenu?.length > 0 && setIsOpen(!isOpen)}
       >
-        <NavigationIcon src={src} alt={alt} />
-        <NavigationName>{linkName}</NavigationName>
-      </NavigationInformations>
-      {subMenu?.length > 0 && (
-        <>
-          <PlusIcon src="assets/plus-icon.svg" onClick={onClick} />
-        </>
+        <NavigationButtonWrapper>
+          <NavigationIcon src={src} alt={alt} />
+          <NavigationName>{linkName}</NavigationName>
+        </NavigationButtonWrapper>
+        {subMenu?.length > 0 && <PlusIcon src="assets/plus-icon.svg" />}
+      </NavigationButton>
+      {isOpen && (
+        <NavigationDropdown>
+          {subMenu?.map(({ label, to }) => {
+            return (
+              <NavigationDropdownLink
+                key={to}
+                to={to}
+                className={location.pathname === to ? 'isSelected' : ''}
+              >
+                {label}
+              </NavigationDropdownLink>
+            );
+          })}
+        </NavigationDropdown>
       )}
-    </NavigationLinkWrapper>
+    </>
   );
 };
 
-const NavigationLinkWrapper = styled.div<{
-  $backgroundColor?: string;
-  $margin?: string;
-}>`
+const NavigationButton = styled(NavLink)<{ $borderRadius?: string }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* background-color: ${({ $backgroundColor }) =>
-    $backgroundColor || '#0c354f'}; */
-  border-radius: 8px;
   padding: 12px;
-  margin: ${({ $margin }) => $margin || '12px 0px'};
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: ${({ $borderRadius }) => $borderRadius || '8px 8px 0 0'};
+
   &.isSelected {
-    background-color: ${({ $backgroundColor }) =>
-      $backgroundColor || '#0c354f'};
+    background-color: rgba(0, 0, 0, 0.3);
   }
 `;
 
-const NavigationInformations = styled(NavLink)`
+const NavigationButtonWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #ffffff;
-  text-decoration: none;
 `;
 
 const NavigationIcon = styled.img`
@@ -80,7 +97,25 @@ const NavigationName = styled.span`
 const PlusIcon = styled.img`
   width: 24px;
   height: 24px;
-  cursor: pointer;
+`;
+
+const NavigationDropdown = styled.div`
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 12px 4px 12px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 0px 0px 8px 8px;
+`;
+
+const NavigationDropdownLink = styled(Link)`
+  padding: 0 12px;
+  color: #6a93ac;
+  text-decoration: none;
+
+  &.isSelected {
+    color: #369c96;
+  }
 `;
 
 export default NavigationLink;

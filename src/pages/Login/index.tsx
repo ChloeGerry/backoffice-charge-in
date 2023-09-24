@@ -43,7 +43,7 @@ const Login = () => {
             <LoginIcon src="/assets/left-arrow.svg" />
             <span>Retour vers la page d'accueil</span>
           </LoginNavigationLink>
-          <Logo width="161px" height="34.86px" />
+          <Logo width="161px" height="35px" />
         </LoginNavigation>
       </header>
       <main>
@@ -82,6 +82,11 @@ const Login = () => {
                 placeholder=""
                 isInputPassword={false}
                 flexDirection="row-reverse"
+                gap="8px"
+                marginBottom="0"
+                lineHeight="21.6px"
+                width="16px"
+                height="16px"
                 checked={formValues.isRememberMeChecked}
                 onClick={() =>
                   setFormValue({
@@ -92,17 +97,22 @@ const Login = () => {
                 }
                 fontSize="16px"
               />
-              <LoginRememberMe>Mot de passe oublié ?</LoginRememberMe>
+              <LoginForgotPassword to="#">
+                Mot de passe oublié ?
+              </LoginForgotPassword>
             </LoginRememberMeWrapper>
-            <Button onClick={handleForm} type="submit" text="SE CONNECTER" />
+            <Button
+              onClick={handleForm}
+              type="submit"
+              text="Se connecter"
+              textTransform="upperCase"
+            />
           </form>
         </LoginDialog>
       </main>
     </>
   );
 };
-
-export default Login;
 
 const LoginNavigation = styled.nav`
   display: flex;
@@ -119,10 +129,10 @@ const LoginNavigationLink = styled(Link)`
   line-height: 26px;
   display: flex;
   align-items: center;
+  gap: 8px;
 `;
 
 const LoginIcon = styled.img`
-  padding-right: 10px;
   width: 32px;
   height: 32px;
 `;
@@ -143,6 +153,7 @@ const LoginModalHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 10px;
 `;
 
 const LoginModalTitle = styled.h1`
@@ -155,7 +166,6 @@ const LoginModalTitle = styled.h1`
 const LoginModalIcon = styled.img`
   width: 36px;
   height: 36px;
-  padding-left: 8px;
 `;
 
 const LoginModalText = styled.p`
@@ -166,18 +176,21 @@ const LoginModalText = styled.p`
   flex-wrap: wrap;
   display: flex;
   width: 80%;
-  margin: 10px auto 32px 0px;
+  margin-top: 8px 0 24px 0px;
 `;
 
 const LoginRememberMeWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 32px;
+  margin-top: 18px;
 `;
 
-const LoginRememberMe = styled.span`
+const LoginForgotPassword = styled(Link)`
   color: #369c96;
   font-size: 16px;
   font-weight: 400;
   line-height: 21.6px;
+  text-decoration: none;
 `;
+
+export default Login;

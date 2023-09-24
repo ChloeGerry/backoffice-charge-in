@@ -3,28 +3,41 @@ import styled from 'styled-components';
 interface Props {
   text: string;
   type: 'button' | 'submit' | 'reset';
+  $textTransform?: string;
   onClick?: () => void;
+  variant: 'primary' | 'secondary' | 'tertiary' | 'destructive';
 }
 
-const Button = ({ text, type, onClick }: Props) => {
+const Button = ({ text, type, onClick, $textTransform, variant }: Props) => {
   return (
-    <ButtonStyled type={type} onClick={onClick}>
+    <ButtonStyled
+      type={type}
+      onClick={onClick}
+      $textTransform={$textTransform!}
+      $variant={variant}
+    >
       {text}
     </ButtonStyled>
   );
 };
 
-export default Button;
+const ButtonStyled = styled('button')<{ $textTransform: string }>(
+  ({ $textTransform, $variant }) => {
+    return {
+      color: '#ffffff',
+      backgroundColor: '#369c96',
+      padding: '22px 50px',
+      borderRadius: '8px',
+      border: 'none',
+      width: '100%',
+      marginTop: '24px',
+      lineHeight: '16.4px',
+      fontSize: '18px',
+      fontWeight: 400,
+      cursor: 'pointer',
+      textTransform: $textTransform,
+    };
+  }
+);
 
-const ButtonStyled = styled.button`
-  color: #ffffff;
-  background-color: #369c96;
-  padding: 22px 50px;
-  border-radius: 8px;
-  border: none;
-  width: 100%;
-  margin-top: 16px;
-  line-height: 16.4px;
-  font-size: 18px;
-  font-weight: 400;
-`;
+export default Button;
