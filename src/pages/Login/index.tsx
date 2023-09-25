@@ -105,7 +105,12 @@ const Login = () => {
               onClick={handleForm}
               type="submit"
               text="Se connecter"
-              textTransform="upperCase"
+              $textTransform="upperCase"
+              $variant="primary"
+              $padding="22px 50px"
+              $fontSize="18px"
+              $lineHeight="16.4px"
+              $marginTop="24px"
             />
           </form>
         </LoginDialog>

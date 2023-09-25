@@ -1,58 +1,49 @@
 import styled from 'styled-components';
 
-interface Props {
-  KPIInformation: string;
-  progression: number;
-}
+import KPIContent from '../KPIContent';
+import KPIButton from '../KPIButton';
+import SecondaryTitle from '../SecondaryTitle';
 
-const KPI = ({ KPIInformation, progression }: Props) => {
+const KPI = () => {
   return (
-    <KPIWrapper>
-      <div>
-        <KPIInformationText>{KPIInformation}</KPIInformationText>
-        <KPIStatus>{progression === 100 ? 'Complété' : 'En cours'}</KPIStatus>
-      </div>
-      <ChartWrapper>{progression}</ChartWrapper>
-    </KPIWrapper>
+    <KPISection>
+      <KPIHeaderContentWrapper>
+        <SecondaryTitle
+          title="Objectifs de "
+          importantPart="Charge-In"
+          colorTitle="#ffffff"
+          colorImportantPart="#4bd2ca"
+        />
+        <KPIButton text="1er trimestre" />
+        <KPIButton text="2ème trimestre" />
+        <KPIButton text="3ème trimestre" />
+        <KPIButton text="année 2023" />
+      </KPIHeaderContentWrapper>
+      <KPIContentWrapper>
+        <KPIContent KPIInformation="50 Partenaires" progression={76} />
+        <KPIContent KPIInformation="100 Installateurs" progression={45} />
+        <KPIContent KPIInformation="200 Installations" progression={100} />
+      </KPIContentWrapper>
+    </KPISection>
   );
 };
 
-const KPIWrapper = styled.div`
+const KPISection = styled.section`
+  background: linear-gradient(#0c354f, #326b8f);
+  box-shadow: 0 4px 16px 0px rgba(164, 188, 211, 0.6);
+  padding: 30px 38px;
+  border-radius: 16px;
+`;
+
+const KPIHeaderContentWrapper = styled.div`
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 24px;
+  margin-bottom: 25px;
 `;
 
-const KPIInformationText = styled.p`
-  color: #6a93ac;
-  font-size: 18px;
-  line-height: 26px;
-  margin: 0;
-`;
-
-const KPIStatus = styled.p`
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 32px;
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-`;
-
-const ChartWrapper = styled.div`
-  width: 100px;
-  height: 100px;
-  background: linear-gradient(#0c354f, #326b8f) padding-box,
-    linear-gradient(#8bdfda, #369c96) border-box;
-  border: 15px solid transparent;
-  border-radius: 50%;
+const KPIContentWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 22.4px;
-  font-weight: 400;
+  justify-content: space-between;
 `;
 
 export default KPI;
