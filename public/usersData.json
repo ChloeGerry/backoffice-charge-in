@@ -1,0 +1,251 @@
+{ "usersData": [
+    {
+        "id": 1,
+        "user": {
+            "firstName": "Charles",
+            "lastName": "Dupont",
+            "postalCode": 33400,
+            "address": "Place de la bourse, 33000 Bordeaux",
+            "mail": "charles.dupont@gmail.com",
+            "phoneNumber": "0123456789"
+        },
+        "formAnswers": {
+            "livingPlace": "Un appartement",
+            "parkingPlace": "À l'intérieur",
+            "status": "Propriétaire",
+            "isCoOwnershipDisagreed": "Non",
+            "isCarAlreadyBuy": "J’ai commandé mon véhicule électrique mais je ne l’ai pas encore",
+            "carModel": "Mercedes-EQS-SUV-500-4MATIC",
+            "use": "Autoroute & ville",
+            "batteryCapacity": "118 kWh",
+            "installationTime": "3 mois",
+            "isIntallersContacted": "Oui",
+            "price": "##€",
+            "installer": "Information ici",
+            "terminalModel": "Information ici",
+            "terminalBrand": "Information ici"
+        },
+        "comments": [{
+            "date": "16/06/2023",
+            "hour": "18:28",
+            "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quae saepe eos repellat expedita quis voluptate nesciunt vel. Et culpa consequuntur qui, minus commodi maiores libero sed incidunt at soluta."
+        }],
+        "documents": [{
+            "fileTitle": "Titre du document",
+            "fileLink": "nomdufichier.png"
+        }, {
+            "fileTitle": "Autre titre de document",
+            "fileLink": "autrenomdufichier.png"
+        }],
+        "choosenTerminal": {
+            "id": 123789,
+            "image": "/assets/terminal-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Puissance max pour votre installation : 22 kW", "Contrôle d’accès : RFID", "Temps de charge : 6h30", "Optimisation coût de recharge : Oui", "Optimisation coût de recharge : Oui"],
+            "price": 2200.0
+        },
+        "choosenInstaller": {
+            "id": 789123,
+            "image": "/assets/installer-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Chez vous à partir de ", "Votre installateur est à [x] km de chez vous", "Votre installateur est à [x] km de chez vous", "Garantie : 2 ans", "Garantie : 2 ans"],
+            "price": 2200.0
+        },
+        "accessories": [{
+            "name": "Nom de l'accessoire",
+            "price": "## €"
+        }, 
+        {
+            "name": "Nom de l'autre accessoire",
+            "price": "## €"
+        }]
+        
+    },
+    {
+        "id": 2,
+        "user": {
+            "firstName": "Olivier",
+            "lastName": "Dubois",
+            "postalCode": 75011,
+            "address": "Place de la nation, 75011 Paris",
+            "mail": "olivier.dubois@gmail.com",
+            "phoneNumber": "0654321012"
+        },
+        "formAnswers": {
+            "livingPlace": "Un appartement",
+            "parkingPlace": "À l'intérieur",
+            "status": "Propriétaire",
+            "isCoOwnershipDisagreed": "Non",
+            "isCarAlreadyBuy": "J’ai commandé mon véhicule électrique mais je ne l’ai pas encore",
+            "carModel": "Mercedes-EQS-SUV-500-4MATIC",
+            "use": "Autoroute & ville",
+            "batteryCapacity": "118 kWh",
+            "installationTime": "3 mois",
+            "isIntallersContacted": "Oui",
+            "price": "##€",
+            "installer": "Information ici",
+            "terminalModel": "Information ici",
+            "terminalBrand": "Information ici"
+        },
+        "comments": [{
+            "date": "16/06/2023",
+            "hour": "18:28",
+            "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quae saepe eos repellat expedita quis voluptate nesciunt vel. Et culpa consequuntur qui, minus commodi maiores libero sed incidunt at soluta."
+        }],
+        "documents": [{
+            "fileTitle": "Titre du document",
+            "fileLink": "nomdufichier.png"
+        }, {
+            "fileTitle": "Autre titre de document",
+            "fileLink": "autrenomdufichier.png"
+        }],
+        "choosenTerminal": {
+            "id": 321987,
+            "image": "/assets/terminal-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Puissance max pour votre installation : 22 kW", "Contrôle d’accès : RFID", "Temps de charge : 6h30", "Optimisation coût de recharge : Oui", "Optimisation coût de recharge : Oui"],
+            "price": 2200.0
+        },
+        "choosenInstaller": {
+            "id": 789123,
+            "image": "/assets/installer-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Chez vous à partir de ", "Votre installateur est à [x] km de chez vous", "Votre installateur est à [x] km de chez vous", "Garantie : 2 ans", "Garantie : 2 ans"],
+            "price": 2200.0
+        },
+        "accessories": [{
+            "name": "Nom de l'accessoire",
+            "price": "## €"
+        }, 
+        {
+            "name": "Nom de l'autre accessoire",
+            "price": "## €"
+        }]
+        
+    },
+    {
+        "id": 3,
+        "user": {
+            "firstName": "Brieuc",
+            "lastName": "Carton",
+            "postalCode": 31000,
+            "address": "Place de la mairie, 31000 Toulouse",
+            "mail": "brieuc.carton@gmail.com",
+            "phoneNumber": "0198765432"
+        },
+        "formAnswers": {
+            "livingPlace": "Un appartement",
+            "parkingPlace": "À l'intérieur",
+            "status": "Propriétaire",
+            "isCoOwnershipDisagreed": "Non",
+            "isCarAlreadyBuy": "J’ai commandé mon véhicule électrique mais je ne l’ai pas encore",
+            "carModel": "Mercedes-EQS-SUV-500-4MATIC",
+            "use": "Autoroute & ville",
+            "batteryCapacity": "118 kWh",
+            "installationTime": "3 mois",
+            "isIntallersContacted": "Oui",
+            "price": "##€",
+            "installer": "Information ici",
+            "terminalModel": "Information ici",
+            "terminalBrand": "Information ici"
+        },
+        "comments": [{
+            "date": "16/06/2023",
+            "hour": "18:28",
+            "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quae saepe eos repellat expedita quis voluptate nesciunt vel. Et culpa consequuntur qui, minus commodi maiores libero sed incidunt at soluta."
+        }],
+        "documents": [{
+            "fileTitle": "Titre du document",
+            "fileLink": "nomdufichier.png"
+        }, {
+            "fileTitle": "Autre titre de document",
+            "fileLink": "autrenomdufichier.png"
+        }],
+        "choosenTerminal": {
+            "id": 654833,
+            "image": "/assets/terminal-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Puissance max pour votre installation : 22 kW", "Contrôle d’accès : RFID", "Temps de charge : 6h30", "Optimisation coût de recharge : Oui", "Optimisation coût de recharge : Oui"],
+            "price": 2200.0
+        },
+        "choosenInstaller": {
+            "id": 530970,
+            "image": "/assets/installer-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Chez vous à partir de ", "Votre installateur est à [x] km de chez vous", "Votre installateur est à [x] km de chez vous", "Garantie : 2 ans", "Garantie : 2 ans"],
+            "price": 2200.0
+        },
+        "accessories": [{
+            "name": "Nom de l'accessoire",
+            "price": "## €"
+        }, 
+        {
+            "name": "Nom de l'autre accessoire",
+            "price": "## €"
+        }]
+        
+    },
+    {
+        "id": 4,
+        "user": {
+            "firstName": "Simone",
+            "lastName": "Rae",
+            "postalCode": 83370,
+            "address": "Place de la jonquille, 83370 Fréjus",
+            "mail": "simone.rae@gmail.com",
+            "phoneNumber": "0656473829"
+        },
+        "formAnswers": {
+            "livingPlace": "Un appartement",
+            "parkingPlace": "À l'intérieur",
+            "status": "Propriétaire",
+            "isCoOwnershipDisagreed": "Non",
+            "isCarAlreadyBuy": "J’ai commandé mon véhicule électrique mais je ne l’ai pas encore",
+            "carModel": "Mercedes-EQS-SUV-500-4MATIC",
+            "use": "Autoroute & ville",
+            "batteryCapacity": "118 kWh",
+            "installationTime": "3 mois",
+            "isIntallersContacted": "Oui",
+            "price": "##€",
+            "installer": "Information ici",
+            "terminalModel": "Information ici",
+            "terminalBrand": "Information ici"
+        },
+        "comments": [{
+            "date": "16/06/2023",
+            "hour": "18:28",
+            "comment": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga quae saepe eos repellat expedita quis voluptate nesciunt vel. Et culpa consequuntur qui, minus commodi maiores libero sed incidunt at soluta."
+        }],
+        "documents": [{
+            "fileTitle": "Titre du document",
+            "fileLink": "nomdufichier.png"
+        }, {
+            "fileTitle": "Autre titre de document",
+            "fileLink": "autrenomdufichier.png"
+        }],
+        "choosenTerminal": {
+            "id": 123098,
+            "image": "/assets/terminal-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Puissance max pour votre installation : 22 kW", "Contrôle d’accès : RFID", "Temps de charge : 6h30", "Optimisation coût de recharge : Oui", "Optimisation coût de recharge : Oui"],
+            "price": 2200.0
+        },
+        "choosenInstaller": {
+            "id": 988909,
+            "image": "/assets/installer-exemple.svg",
+            "name": "Pulsar Plus",
+            "informations": ["Chez vous à partir de ", "Votre installateur est à [x] km de chez vous", "Votre installateur est à [x] km de chez vous", "Garantie : 2 ans", "Garantie : 2 ans"],
+            "price": 2200.0
+        },
+        "accessories": [{
+            "name": "Nom de l'accessoire",
+            "price": "## €"
+        }, 
+        {
+            "name": "Nom de l'autre accessoire",
+            "price": "## €"
+        }]
+        
+    }
+
+]}
