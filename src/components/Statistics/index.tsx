@@ -5,6 +5,7 @@ import Card from '../../components/Card';
 import StatisticsPercentage from '../StatisticsPercentages';
 import B2CB2BDetails from '../B2CB2BDetails';
 import SecondaryTitle from '../SecondaryTitle';
+import GradientButton from '../Buttons/GradientButton';
 
 const Statistics = () => {
   const [isStatisticsButtonOpen, setStatisticsButton] =
@@ -20,31 +21,26 @@ const Statistics = () => {
           colorImportantPart="#369C96"
         />
         <StatisticsButtonsWrapper>
-          <StatisticsButton
-            $color="#ffffff"
-            $background="linear-gradient(to right, #8bdfda, #369c96)"
-            $padding="8px 12px"
-            type="button"
+          <GradientButton
+            text="Cette année"
+            padding="8px 12px"
+            fontSize="18px"
+            lineHeight="26px"
             onClick={() => {
               return setStatisticsButton(!isStatisticsButtonOpen);
             }}
-          >
-            Cette année
-            <img src="/assets/arrow-down-icon.svg" />
-          </StatisticsButton>
+            isContainIcon={true}
+            src="/assets/arrow-down-icon.svg"
+          />
 
           {isStatisticsButtonOpen && (
-            <StatisticsButtonsDropdown>
-              <StatisticsButton type="button">Cette année</StatisticsButton>
-              <StatisticsButton type="button">
-                30 dernier jours
-              </StatisticsButton>
-              <StatisticsButton type="button">Mois de Juin</StatisticsButton>
-              <StatisticsButton type="button">6 derniers mois</StatisticsButton>
-              <StatisticsButton type="button">
-                12 derniers mois
-              </StatisticsButton>
-            </StatisticsButtonsDropdown>
+            <StatisticsListDropdown>
+              <StatisticsList>Cette année</StatisticsList>
+              <StatisticsList>30 dernier jours</StatisticsList>
+              <StatisticsList>Mois de Juin</StatisticsList>
+              <StatisticsList>6 derniers mois</StatisticsList>
+              <StatisticsList>12 derniers mois</StatisticsList>
+            </StatisticsListDropdown>
           )}
         </StatisticsButtonsWrapper>
       </StatisticsHeader>
@@ -143,36 +139,32 @@ const StatisticsButtonsWrapper = styled.div`
   gap: 8px;
 `;
 
-const StatisticsButton = styled.button<{
-  $color?: string;
-  $background?: string;
-  $padding?: string;
-}>`
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  background: ${({ $background }) => $background || '#ffffff'};
-  border: none;
-  border-radius: 8px;
-  padding: ${({ $padding }) => $padding || '10px 12px'};
-  color: ${({ $color }) => $color};
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #ebebeb;
-  }
-`;
-
-const StatisticsButtonsDropdown = styled.div`
+const StatisticsListDropdown = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
   background-color: white;
   border-radius: 12px;
   padding: 8px;
+  width: 203px;
+  position: absolute;
+  top: 566px;
+  margin: 0;
+  box-shadow: 0 4px 16px 0 rgba(176, 189, 189, 0.16);
+`;
+
+const StatisticsList = styled.li`
+  font-size: 16px;
+  line-height: 21.6px;
+  background-color: '#ffffff';
+  padding: 10px 12px;
+  list-style: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
 `;
 
 const CardsWrapper = styled.div`

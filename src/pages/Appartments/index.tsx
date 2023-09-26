@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Appartments = () => {
-  return <AppartmentPageTitle>Appartements page</AppartmentPageTitle>;
+  return <AppartmentPageTitle>Appartements</AppartmentPageTitle>;
 };
 
 const AppartmentPageTitle = styled.h1`

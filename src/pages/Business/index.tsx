@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Business = () => {
-  return <BusinessPageTitle>Business page</BusinessPageTitle>;
+  return <BusinessPageTitle>Études</BusinessPageTitle>;
 };
 
 const BusinessPageTitle = styled.h1`

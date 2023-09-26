@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import SecondaryTitle from '../SecondaryTitle';
-import Button from '../Button';
+import IconButton from '../Buttons/IconButton';
 
 const Actions = () => {
   return (
@@ -13,95 +13,35 @@ const Actions = () => {
         colorImportantPart="#369C96"
       />
       <ButtonsWrapper>
-        <Button
-          type="button"
-          $variant="secondary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/person-icon-button.svg"
           text="Ajouter un installateur"
+          backgroundColor="#304399"
         />
-        <Button
-          type="button"
-          $variant="primary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/document-icon-button.svg"
           text="Ajouter une étude"
+          backgroundColor="#369C96"
         />
-        <Button
-          type="button"
-          $variant="secondary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/chargin-station-button.svg"
           text="Ajouter une borne"
+          backgroundColor="#304399"
         />
-        <Button
-          type="button"
-          $variant="primary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/car-icon-button.svg"
           text="Ajouter un véhicule"
+          backgroundColor="#369C96"
         />
-        <Button
-          type="button"
-          $variant="secondary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/accessories-icon-button.svg"
           text="Ajouter un accessoire"
+          backgroundColor="#304399"
         />
-        <Button
-          type="button"
-          $variant="primary"
-          $padding="10px 16px"
-          $width="32.1%"
-          $fontSize="16px"
-          $lineHeight="24.6px"
-          $display="flex"
-          $alignItems="center"
-          $justifyContent="center"
-          $gap="10px"
-          isButtonContainIcon="true"
+        <IconButton
           src="/assets/car-icon-button.svg"
           text="Ajouter un objectif"
+          backgroundColor="#369C96"
         />
       </ButtonsWrapper>
     </section>

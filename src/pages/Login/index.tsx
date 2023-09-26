@@ -4,8 +4,8 @@ import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Form from '../../components/Form';
-import Button from '../../components/Button';
 import Logo from '../../components/Logo';
+import BasicButton from '../../components/Buttons/BasicButton';
 
 interface LoginForm {
   email: string;
@@ -101,16 +101,17 @@ const Login = () => {
                 Mot de passe oublié ?
               </LoginForgotPassword>
             </LoginRememberMeWrapper>
-            <Button
+            <BasicButton
               onClick={handleForm}
               type="submit"
               text="Se connecter"
-              $textTransform="upperCase"
-              $variant="primary"
-              $padding="22px 50px"
-              $fontSize="18px"
-              $lineHeight="16.4px"
-              $marginTop="24px"
+              textTransform="upperCase"
+              padding="22px 50px"
+              fontSize="18px"
+              lineHeight="16.4px"
+              marginTop="24px"
+              backgroundColor="#369C96"
+              width="100%"
             />
           </form>
         </LoginDialog>

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 import KPIContent from '../KPIContent';
-import KPIButton from '../KPIButton';
 import SecondaryTitle from '../SecondaryTitle';
+import GradientButton from '../Buttons/GradientButton';
 
 const KPI = () => {
   return (
@@ -14,10 +14,34 @@ const KPI = () => {
           colorTitle="#ffffff"
           colorImportantPart="#4bd2ca"
         />
-        <KPIButton text="1er trimestre" />
-        <KPIButton text="2ème trimestre" />
-        <KPIButton text="3ème trimestre" />
-        <KPIButton text="année 2023" />
+        <GradientButton
+          text="1er trimestre"
+          background="#0c354f"
+          padding="6px 12px"
+          fontSize="16px"
+          line-height="21.6"
+        />
+        <GradientButton
+          text="2ème trimestre"
+          background="#0c354f"
+          padding="6px 12px"
+          fontSize="16px"
+          line-height="21.6"
+        />
+        <GradientButton
+          text="3ème trimestre"
+          background="#0c354f"
+          padding="6px 12px"
+          fontSize="16px"
+          line-height="21.6"
+        />
+        <GradientButton
+          text="année 2023"
+          background="#0c354f"
+          padding="6px 12px"
+          fontSize="16px"
+          line-height="21.6"
+        />
       </KPIHeaderContentWrapper>
       <KPIContentWrapper>
         <KPIContent KPIInformation="50 Partenaires" progression={76} />

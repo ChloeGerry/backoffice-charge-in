@@ -5,6 +5,7 @@ import { useState } from 'react';
 interface SubMenu {
   label: string;
   to: string;
+  isSelected?: boolean;
 }
 
 interface Props {
@@ -41,16 +42,16 @@ const NavigationLink = ({
           <NavigationIcon src={src} alt={alt} />
           <NavigationName>{linkName}</NavigationName>
         </NavigationButtonWrapper>
-        {subMenu?.length > 0 && <PlusIcon src="assets/plus-icon.svg" />}
+        {subMenu?.length > 0 && <PlusIcon src="/assets/plus-icon.svg" />}
       </NavigationButton>
       {isOpen && (
         <NavigationDropdown>
-          {subMenu?.map(({ label, to }) => {
+          {subMenu?.map(({ label, to, isSelected }) => {
             return (
               <NavigationDropdownLink
                 key={to}
                 to={to}
-                className={location.pathname === to ? 'isSelected' : ''}
+                className={isSelected ? 'isSelected' : ''}
               >
                 {label}
               </NavigationDropdownLink>

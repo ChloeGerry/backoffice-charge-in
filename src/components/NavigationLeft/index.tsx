@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { useSearchParams } from 'react-router-dom';
 
 import NavigationLink from '../NavigationLink';
 import NavigationPartName from '../NavigationPartName';
 import Logo from '../Logo';
 
 const NavigationLeft = () => {
+  const [searchParams] = useSearchParams();
+
   return (
     <NavigationSectionWrapper>
       <Logo width="172px" height="36px" />
@@ -22,8 +25,16 @@ const NavigationLeft = () => {
           alt="House icon"
           linkName="Maisons"
           subMenu={[
-            { label: 'En cours', to: '/housesInProgress' },
-            { label: 'Archivés', to: '/housesArchived' },
+            {
+              label: 'En cours',
+              to: '/houses?status=in-progress',
+              isSelected: searchParams.get('status') === 'in-progress',
+            },
+            {
+              label: 'Archivés',
+              to: '/houses?status=archived',
+              isSelected: searchParams.get('status') === 'archived',
+            },
           ]}
         />
         <NavigationLink
@@ -31,8 +42,14 @@ const NavigationLeft = () => {
           alt="House icon"
           linkName="Appartement"
           subMenu={[
-            { label: 'En cours', to: '/appartmentsInProgress' },
-            { label: 'Archivé', to: '/appartmentsArchived' },
+            {
+              label: 'En cours',
+              to: '/appartments?status=in-progress',
+            },
+            {
+              label: 'Archivé',
+              to: '/appartments?status=archived',
+            },
           ]}
         />
         <NavigationLink
@@ -40,8 +57,12 @@ const NavigationLeft = () => {
           alt="Business icon"
           linkName="Etudes"
           subMenu={[
-            { label: 'En cours', to: '/businessProgress' },
-            { label: 'Archivé', to: '/businessArchived' },
+            {
+              label: 'En cours',
+              to: '/business?status=in-progress',
+              isSelected: searchParams.get('status') === 'in-progress',
+            },
+            { label: 'Archivé', to: '/business?status=archived' },
           ]}
         />
         <NavigationPartName partTitle="Utilisateurs" />
