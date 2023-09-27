@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 
-import Card from '../../components/Card';
+import StatisticsCard from '../Cards/StatisticsCard';
 import StatisticsPercentage from '../StatisticsPercentages';
 import B2CB2BDetails from '../B2CB2BDetails';
 import SecondaryTitle from '../SecondaryTitle';
@@ -45,7 +45,7 @@ const Statistics = () => {
         </StatisticsButtonsWrapper>
       </StatisticsHeader>
       <CardsWrapper>
-        <Card
+        <StatisticsCard
           icon="/assets/person-icon.svg"
           text="Installateurs partenaires inscrits"
         >
@@ -55,8 +55,11 @@ const Statistics = () => {
             color="#a94442"
             percentage={2}
           />
-        </Card>
-        <Card icon="/assets/ion_pie-chart.svg" text="Abonnements en cours">
+        </StatisticsCard>
+        <StatisticsCard
+          icon="/assets/ion_pie-chart.svg"
+          text="Abonnements en cours"
+        >
           <StatisticsCardText>
             {' '}
             Nombre d'abonnements{' '}
@@ -68,8 +71,8 @@ const Statistics = () => {
             color="#AFB2B6"
             percentage={2}
           />
-        </Card>
-        <Card icon="/assets/file-icon.svg" text="Devis réalisés">
+        </StatisticsCard>
+        <StatisticsCard icon="/assets/file-icon.svg" text="Devis réalisés">
           <StatisticsPercentage
             number={105}
             src="/assets/arrow-down-icon-red.svg"
@@ -77,8 +80,11 @@ const Statistics = () => {
             percentage={2}
           />
           <B2CB2BDetails exitValue="##" entriesValue="##" />
-        </Card>
-        <Card icon="/assets/chargin-station-icon.svg" text="Points de charge">
+        </StatisticsCard>
+        <StatisticsCard
+          icon="/assets/charge-in-station-icon.svg"
+          text="Points de charge"
+        >
           <StatisticsPercentage
             number={450}
             src="/assets/up-arrow-green.svg"
@@ -86,8 +92,8 @@ const Statistics = () => {
             percentage={18}
           />
           <B2CB2BDetails exitValue="##" entriesValue="##" />
-        </Card>
-        <Card
+        </StatisticsCard>
+        <StatisticsCard
           icon="/assets/supervision-icon.svg"
           text="Points de charge supervisés"
         >
@@ -98,8 +104,11 @@ const Statistics = () => {
             percentage={18}
           />
           <B2CB2BDetails exitValue="##" entriesValue="##" />
-        </Card>
-        <Card icon="/assets/folder-icon.svg" text="Taux de conversion">
+        </StatisticsCard>
+        <StatisticsCard
+          icon="/assets/folder-icon.svg"
+          text="Taux de conversion"
+        >
           <StatisticsPercentage
             number={78}
             src="/assets/arrow-down-icon-red.svg"
@@ -107,8 +116,8 @@ const Statistics = () => {
             percentage={2}
           />
           <B2CB2BDetails exitValue="##" entriesValue="##" />
-        </Card>
-        <Card icon="/assets/money-icon.svg" text="Chiffre d'affaires">
+        </StatisticsCard>
+        <StatisticsCard icon="/assets/money-icon.svg" text="Chiffre d'affaires">
           <StatisticsPercentage
             isNumberAPrice={true}
             number={26100}
@@ -122,7 +131,7 @@ const Statistics = () => {
             flexDirection="column"
             gap="8px"
           />
-        </Card>
+        </StatisticsCard>
       </CardsWrapper>
     </section>
   );

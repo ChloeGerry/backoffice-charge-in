@@ -73,19 +73,19 @@ const NavigationLeft = () => {
           to="/admins"
         />
         <NavigationLink
-          src="/assets/person-icon.svg"
+          src="/assets/person-icon-white.svg"
           alt="Person icon"
           linkName="Projects Managers"
           to="/projects"
         />
         <NavigationLink
-          src="/assets/person-icon.svg"
+          src="/assets/person-icon-white.svg"
           alt="Person icon"
           linkName="Installateurs"
           to="/installers"
         />
         <NavigationLink
-          src="/assets/person-icon.svg"
+          src="/assets/person-icon-white.svg"
           alt="Person icon"
           linkName="Clients B2C"
           to="/b2c-clients"

@@ -14,7 +14,7 @@ const Actions = () => {
       />
       <ButtonsWrapper>
         <IconButton
-          src="/assets/person-icon-button.svg"
+          src="/assets/person-icon-white.svg"
           text="Ajouter un installateur"
           backgroundColor="#304399"
         />
@@ -24,7 +24,7 @@ const Actions = () => {
           backgroundColor="#369C96"
         />
         <IconButton
-          src="/assets/chargin-station-button.svg"
+          src="/assets/charge-in-station-button.svg"
           text="Ajouter une borne"
           backgroundColor="#304399"
         />

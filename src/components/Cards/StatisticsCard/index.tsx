@@ -6,7 +6,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const Card = ({ icon, text, children }: Props) => {
+const StatisticsCard = ({ icon, text, children }: Props) => {
   return (
     <CardWrapper>
       <CardIcon src={icon} />
@@ -40,4 +40,4 @@ const CardText = styled.p`
   margin: 0;
 `;
 
-export default Card;
+export default StatisticsCard;

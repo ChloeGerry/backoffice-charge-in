@@ -79,6 +79,7 @@ const UserText = styled.p<{
 const UserIconsWrapper = styled.div`
   display: flex;
   gap: 10px;
+  align-items: baseline;
   cursor: pointer;
 `;
 
