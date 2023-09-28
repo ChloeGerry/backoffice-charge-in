@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { useSearchParams } from 'react-router-dom';
 
 import NavigationLink from '../NavigationLink';
-import NavigationPartName from '../NavigationPartName';
-import Logo from '../Logo';
+import NavigationPartName from '../../NavigationPartName';
+import Logo from '../../Logo';
 
 const NavigationLeft = () => {
   const [searchParams] = useSearchParams();

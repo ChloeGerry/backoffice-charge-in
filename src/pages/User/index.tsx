@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import NavigationLeft from '../../components/NavigationLeft';
+import NavigationLeft from '../../components/Navigation/NavigationLeft';
+import NavigationProfile from '../../components/Navigation/NavigationProfile';
 import Header from '../../components/layouts/Header';
 import MainTitle from '../../components/MainTitle';
 import SlideShowButton from '../../components/Buttons/SlideshowButton';
@@ -9,7 +10,11 @@ import UsersCard from '../../components/Cards/UsersCard';
 import SecondaryTitle from '../../components/SecondaryTitle';
 import ModelsCard from '../../components/Cards/ModelsCard';
 import List from '../../components/List';
+import ListItem from '../../components/ListItem';
 import BasicButton from '../../components/Buttons/BasicButton';
+import BorderButton from '../../components/Buttons/BorderButton';
+import UsersComments from '../../components/UsersComments';
+import UserDocuments from '../../components/UserDocuments';
 
 const User = () => {
   return (
@@ -18,69 +23,25 @@ const User = () => {
       <UserContentWrapper>
         <Header />
         <UserMain>
+          <NavigationProfile />
           <MainTitle
             src="/assets/user-icon.svg"
             title="Profil : Nom + Prénom"
           />
           <ButtonsWrapper>
             <SlideShowButton text="Etape 1" backgroundColor="#304399" />
-            <SlideShowButton text="Envoyer un mail" backgroundColor="#369C96" />
+            <RightButtonsWrapper>
+              <BorderButton text="Status" />
+              <SlideShowButton
+                text="Envoyer un mail"
+                backgroundColor="#369C96"
+              />
+            </RightButtonsWrapper>
           </ButtonsWrapper>
           <UserSection>
             <UserInformationsCard />
-            <UsersCard>
-              <TitleWrapper>
-                <SecondaryTitle
-                  title="Commentaires"
-                  colorTitle="#000000"
-                  titleNumber={9}
-                />
-              </TitleWrapper>
-              <CommentsWrapper>
-                Ajoutez un commentaire...
-                <img src="/assets/comment-arrow.svg" />
-              </CommentsWrapper>
-            </UsersCard>
-
-            <UsersCard>
-              <SecondaryTitle title="Documents ajoutés" colorTitle="#000000" />
-              <DocumentsWrapper>
-                {/* <UserLabel
-                  label="Titre du document"
-                  value="nomdufichier.png"
-                  color="#369C96"
-                  backgroundColor="#F4F8F6"
-                  padding="2px 8px"
-                />
-                <UserLabel
-                  label="Titre du document"
-                  value="nomdufichier.png"
-                  color="#369C96"
-                  backgroundColor="#F4F8F6"
-                  padding="2px 8px"
-                />
-                <UserLabel
-                  label="Titre du document"
-                  value="nomdufichier.png"
-                  color="#369C96"
-                  backgroundColor="#F4F8F6"
-                  padding="2px 8px"
-                />
-                <UserLabel
-                  label="Titre du document"
-                  value="nomdufichier.png"
-                  color="#369C96"
-                  backgroundColor="#F4F8F6"
-                  padding="2px 8px"
-                /> */}
-              </DocumentsWrapper>
-              <OthersDocumentsWrapper>
-                <OthersDocumentsLabel> Autres documents</OthersDocumentsLabel>
-                <p>nomdufichier.png</p>
-                <p>nomdufichier.png</p>
-                <p>nomdufichier.png</p>
-              </OthersDocumentsWrapper>
-            </UsersCard>
+            <UsersComments />
+            <UserDocuments />
             <UsersCard>
               <SecondaryTitle title="Borne choisie" colorTitle="#000000" />
               <ModelsCard
@@ -88,7 +49,9 @@ const User = () => {
                 title="Pulsar Plus"
                 price="2200.00€"
               >
-                <List />
+                <List>
+                  <ListItem />
+                </List>
               </ModelsCard>
               <BasicButton
                 type="button"
@@ -109,7 +72,9 @@ const User = () => {
                 title="Pulsar Plus"
                 price="2200.00€"
               >
-                <List />
+                <List>
+                  <ListItem />
+                </List>
               </ModelsCard>
               <BasicButton
                 type="button"
@@ -144,7 +109,9 @@ const User = () => {
             </UsersCard>
             <UsersCard>
               <SecondaryTitle title="Accessoires" colorTitle="#000000" />
-              <List />
+              <List>
+                <ListItem />
+              </List>
               <BasicButton
                 type="button"
                 text="Modifier les accessoires"
@@ -156,6 +123,7 @@ const User = () => {
               />
             </UsersCard>
           </UserSection>
+          <NavigationProfile />
         </UserMain>
       </UserContentWrapper>
     </UserWrapper>
@@ -183,42 +151,16 @@ const ButtonsWrapper = styled.div`
   margin-top: 30px;
 `;
 
+const RightButtonsWrapper = styled.div`
+  display: flex;
+  gap: 38px;
+`;
+
 const UserSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
   margin: 30px 0;
-`;
-
-const TitleWrapper = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-bottom: 24px;
-`;
-
-const CommentsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 20px 64px 20px;
-  background-color: #f4f8f6;
-  border-radius: 8px;
-`;
-
-const DocumentsWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-`;
-
-const OthersDocumentsWrapper = styled.div`
-  display: flex;
-`;
-
-const OthersDocumentsLabel = styled.div`
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0;
-  line-height: 21.6px;
 `;
 
 const FormDiscountWrapper = styled.form`

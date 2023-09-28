@@ -26,7 +26,7 @@ const ModelsCardWrapper = styled.article`
   display: flex;
   justify-content: space-between;
   border-radius: 16px;
-  margin: 24px;
+  margin: 24px 0;
 `;
 
 const ModelsContent = styled.div`

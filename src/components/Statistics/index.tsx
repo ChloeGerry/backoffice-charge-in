@@ -152,20 +152,19 @@ const StatisticsListDropdown = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 12px;
   padding: 8px;
   width: 203px;
   position: absolute;
-  top: 566px;
+  top: 568px;
   margin: 0;
-  box-shadow: 0 4px 16px 0 rgba(176, 189, 189, 0.16);
+  box-shadow: 0 4px 16px 0 rgba(180, 189, 189, 0.25);
 `;
 
 const StatisticsList = styled.li`
   font-size: 16px;
   line-height: 21.6px;
-  background-color: '#ffffff';
   padding: 10px 12px;
   list-style: none;
   border-radius: 8px;

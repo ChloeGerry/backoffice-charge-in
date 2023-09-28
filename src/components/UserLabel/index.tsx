@@ -46,7 +46,6 @@ const UserLabelStyled = styled.p<{
   line-height: ${({ $lineHeight }) => $lineHeight || '21.6px'};
   color: ${({ $color }) => $color || '#000000'};
   border-radius: 4px;
-  width: fit-content;
 `;
 
 const UserInformationIcon = styled.img`

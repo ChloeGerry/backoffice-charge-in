@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 import Header from '../../components/layouts/Header';
-import NavigationLeft from '../../components/NavigationLeft';
+import NavigationLeft from '../../components/Navigation/NavigationLeft';
 import MainTitle from '../../components/MainTitle';
 import BasicButton from '../../components/Buttons/BasicButton';
 import UserInformationsPreview from '../../components/UserInformationsPreview';

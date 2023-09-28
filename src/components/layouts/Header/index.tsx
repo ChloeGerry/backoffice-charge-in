@@ -1,6 +1,13 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+
+import NotificationsSlideshow from '../../NotificationsSlideshow';
 
 const Header = () => {
+  const [areNotificationsOpen, setNotifications] = useState<boolean>(false);
+
+  console.log('areNotificationsOpen', areNotificationsOpen);
+
   return (
     <HeaderWrapper>
       <HeaderUserNameWrapper>
@@ -8,7 +15,11 @@ const Header = () => {
       </HeaderUserNameWrapper>
       <HeaderNavigationwrapper>
         <div>
-          <HeaderNotificationIcon src="/assets/notifications-icon.svg" />
+          <HeaderNotificationIcon
+            src="/assets/notifications-icon.svg"
+            onClick={() => setNotifications(!areNotificationsOpen)}
+          />
+          {areNotificationsOpen && <NotificationsSlideshow />}
           <HeaderNotificationNumberIcon src="/assets/notifications-number.svg" />
         </div>
         <img src="/assets/profil-icon.svg" />
@@ -47,6 +58,7 @@ const HeaderNavigationwrapper = styled.nav`
 const HeaderNotificationIcon = styled.img`
   width: 24px;
   height: 24px;
+  cursor: pointer;
 `;
 
 const HeaderNotificationNumberIcon = styled.img`

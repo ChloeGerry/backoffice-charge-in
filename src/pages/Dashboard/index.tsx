@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import Header from '../../components/layouts/Header';
-import NavigationLeft from '../../components/NavigationLeft';
+import NavigationLeft from '../../components/Navigation/NavigationLeft';
 import MainTitle from '../../components/MainTitle';
 import KPI from '../../components/KPI';
 import Statistics from '../../components/Statistics';
