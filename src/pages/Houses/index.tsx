@@ -1,16 +1,28 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppDispatch } from '../../utils/store';
 
 import Header from '../../components/layouts/Header';
 import NavigationLeft from '../../components/Navigation/NavigationLeft';
 import MainTitle from '../../components/MainTitle';
 import BasicButton from '../../components/Buttons/BasicButton';
 import UserInformationsPreview from '../../components/UserInformationsPreview';
-import { selectUserProfile } from '../../features/usersReducers';
+import {
+  selectUserProfile,
+  fetchUserProfile,
+} from '../../features/usersReducers';
 
 const Houses = () => {
-  const userProfile = useSelector(selectUserProfile);
-  console.log('UserProfile', userProfile);
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchUserProfile());
+  }, [dispatch]);
+
+  const usersProfiles = useSelector(selectUserProfile);
+  console.log('usersProfiles', usersProfiles);
+
   return (
     <HousesInProgressWrapper>
       <NavigationLeft />
@@ -65,8 +77,8 @@ const Houses = () => {
               <UserInformationsLabel>Actions</UserInformationsLabel>
             </UserInformationsPreviewLabel>
             <UserInformationsPreview
-              name="Name"
-              choosenChargin="Borne"
+              name="Dupont"
+              choosenChargin="Borne modèle 2"
               estimate="###"
               step="Étape 1"
               color="#369C96"
@@ -74,6 +86,51 @@ const Houses = () => {
               padding="2px 8px"
               borderRadius="4px"
             />
+            <UserInformationsPreview
+              name="Dubois"
+              choosenChargin="Borne modèle 1"
+              estimate="###"
+              step="Étape 2"
+              color="#E8B05C"
+              backgroundColor="#E8B05C1A"
+              padding="2px 8px"
+              borderRadius="4px"
+            />
+            <UserInformationsPreview
+              name="Carton"
+              choosenChargin="Borne modèle 23"
+              estimate="###"
+              step="Étape 3"
+              color="#9E79EC"
+              backgroundColor="#9E79EC1A"
+              padding="2px 8px"
+              borderRadius="4px"
+            />
+            <UserInformationsPreview
+              name="Raepet"
+              choosenChargin="Borne modèle 5"
+              estimate="###"
+              step="Étape 3"
+              color="#F074A1"
+              backgroundColor="#F074A11A"
+              padding="2px 8px"
+              borderRadius="4px"
+            />
+            <HousesInProgressFooter>
+              <HousesInprogressText>
+                Lignes par pages :{' '}
+                <HousesInprogressPagination>5</HousesInprogressPagination>
+                <img src="/assets/down-arrow-grey.svg" alt="down arrow" />
+              </HousesInprogressText>
+              <HousesInprogressText>
+                1-5 de 15
+                <img src="/assets/left-arrow-icon-grey.svg" alt="left arrow" />
+                <img
+                  src="/assets/right-arrow-icon-grey.svg"
+                  alt="right arrow"
+                />
+              </HousesInprogressText>
+            </HousesInProgressFooter>
           </HousesInProgressSection>
         </main>
       </HousesInProgressContentWrapper>
@@ -158,6 +215,24 @@ const UserInformationsLabel = styled.p`
   line-height: 24.6px;
   color: #8fa2a2;
   text-transform: uppercase;
+`;
+
+const HousesInProgressFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  padding: 16px 0;
+`;
+
+const HousesInprogressText = styled.p`
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const HousesInprogressPagination = styled.span`
+  color: #8fa2a2;
 `;
 
 export default Houses;

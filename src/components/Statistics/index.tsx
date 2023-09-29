@@ -26,6 +26,7 @@ const Statistics = () => {
             padding="8px 12px"
             fontSize="18px"
             lineHeight="26px"
+            gap="80px"
             onClick={() => {
               return setStatisticsButton(!isStatisticsButtonOpen);
             }}
@@ -157,7 +158,7 @@ const StatisticsListDropdown = styled.ul`
   padding: 8px;
   width: 203px;
   position: absolute;
-  top: 568px;
+  top: 537px;
   margin: 0;
   box-shadow: 0 4px 16px 0 rgba(180, 189, 189, 0.25);
 `;

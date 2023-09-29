@@ -50,16 +50,18 @@ const Form = ({
       >
         {label}
       </FormLabel>
-      <FormInput
-        id={id}
-        type={type}
-        placeholder={placeholder}
-        checked={checked}
-        onClick={onClick}
-        $width={width}
-        $height={height}
-      />
-      {isInputPassword && <FormEyeIcon src={src} alt="Eye icon" />}
+      <div>
+        <FormInput
+          id={id}
+          type={type}
+          placeholder={placeholder}
+          checked={checked}
+          onClick={onClick}
+          $width={width}
+          $height={height}
+        />
+        {isInputPassword && <FormEyeIcon src={src} alt="Eye icon" />}
+      </div>
     </FormWrapper>
   );
 };
@@ -82,22 +84,31 @@ const FormLabel = styled.label<{ $fontSize?: string; $lineHeight?: string }>`
 `;
 
 const FormInput = styled.input<{ $width?: string; $height?: string }>`
-  /* color: #dce6e5; */
   width: ${({ $width }) => $width};
   height: ${({ $height }) => $height};
   accent-color: #304399;
   border: 1px solid #dce6e5;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
-  padding: 5px 9px;
+  padding: 5px 0 5px 9px;
   border-radius: 3px;
+  width: -webkit-fill-available;
 `;
 
 const FormEyeIcon = styled.img`
-  width: 24px;
-  height: 24px;
   position: absolute;
-  left: 85%;
-  top: 56.9%;
+  right: 11%;
+  padding-top: 2px;
+  margin-right: 9px;
+
+  @media (max-width: 980px) {
+    right: 12%;
+  }
+  @media (max-width: 855px) {
+    right: 6%;
+  }
+  @media (max-width: 855px) {
+    right: 8%;
+  }
 `;
 
 export default Form;

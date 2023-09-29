@@ -2,26 +2,42 @@ import styled from 'styled-components';
 
 interface Props {
   opacity?: string;
+  userName: string;
+  notificationDescription?: string;
+  notificationInformation: string;
+  margin?: string;
+  padding?: string;
 }
 
-const NotificationItem = ({ opacity }: Props) => {
+const NotificationItem = ({
+  opacity,
+  userName,
+  notificationDescription,
+  notificationInformation,
+  margin,
+  padding,
+}: Props) => {
   return (
-    <NotificationWrapper $opacity={opacity}>
+    <NotificationWrapper $opacity={opacity} $margin={margin} $padding={padding}>
       <NotificationProfilIcon src="/assets/profil-icon.svg" alt="profil icon" />
       <div>
         <NotificationText>
-          <NotificationName>Prénom Nom</NotificationName> a ajouté un
-          installateur
+          <NotificationName>{userName}</NotificationName>
+          {notificationDescription && notificationDescription}
         </NotificationText>
-        <NotificationDate>Il y a 3 jours</NotificationDate>
+        <NotificationDate>{notificationInformation}</NotificationDate>
       </div>
     </NotificationWrapper>
   );
 };
 
-const NotificationWrapper = styled.div<{ $opacity?: string }>`
-  margin: 20px 24px 0px 24px;
-  padding-bottom: 18px;
+const NotificationWrapper = styled.div<{
+  $opacity?: string;
+  $margin?: string;
+  $padding?: string;
+}>`
+  margin: ${({ $margin }) => $margin || '20px 24px 0px 24px'};
+  padding: ${({ $padding }) => $padding || '18px'};
   display: flex;
   gap: 16px;
   border-bottom: 1px solid #e5e5e5;

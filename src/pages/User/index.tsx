@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppDispatch } from '../../utils/store';
+import { useEffect } from 'react';
 
 import NavigationLeft from '../../components/Navigation/NavigationLeft';
 import NavigationProfile from '../../components/Navigation/NavigationProfile';
@@ -10,13 +13,26 @@ import UsersCard from '../../components/Cards/UsersCard';
 import SecondaryTitle from '../../components/SecondaryTitle';
 import ModelsCard from '../../components/Cards/ModelsCard';
 import List from '../../components/List';
-import ListItem from '../../components/ListItem';
 import BasicButton from '../../components/Buttons/BasicButton';
 import BorderButton from '../../components/Buttons/BorderButton';
 import UsersComments from '../../components/UsersComments';
 import UserDocuments from '../../components/UserDocuments';
+import {
+  selectUserProfile,
+  fetchUserProfile,
+} from '../../features/usersReducers';
 
 const User = () => {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(fetchUserProfile());
+  }, [dispatch]);
+
+  const usersProfiles = useSelector(selectUserProfile);
+
+  console.log('usersProfiles', usersProfiles);
+
   return (
     <UserWrapper>
       <NavigationLeft />
@@ -50,7 +66,25 @@ const User = () => {
                 price="2200.00€"
               >
                 <List>
-                  <ListItem />
+                  <li>
+                    <ListText>
+                      Puissance max pour votre installation: 22 kW
+                    </ListText>
+                  </li>
+                  <li>
+                    <ListText>Contrôle d'accès: RFID</ListText>
+                  </li>
+
+                  <li>
+                    <ListText>Temps de charge: 6h30</ListText>
+                  </li>
+                  <li>
+                    <ListText>Optimisation coût de recharge: Oui</ListText>
+                  </li>
+
+                  <li>
+                    <ListText>Borne connectée</ListText>
+                  </li>
                 </List>
               </ModelsCard>
               <BasicButton
@@ -73,7 +107,21 @@ const User = () => {
                 price="2200.00€"
               >
                 <List>
-                  <ListItem />
+                  <li>
+                    <ListText>Chez vous à partir de [date]</ListText>
+                  </li>
+                  <li>
+                    <ListText>
+                      Votre installateur est à Xkm de chez vous
+                    </ListText>
+                  </li>
+
+                  <li>
+                    <ListText>Garantie : 2 ans</ListText>
+                  </li>
+                  <li>
+                    <ListText>Installateur certifié</ListText>
+                  </li>
                 </List>
               </ModelsCard>
               <BasicButton
@@ -109,8 +157,47 @@ const User = () => {
             </UsersCard>
             <UsersCard>
               <SecondaryTitle title="Accessoires" colorTitle="#000000" />
-              <List>
-                <ListItem />
+              <List
+                display="flex"
+                justifyContent="space-between"
+                margin="24px 0 0 0 0"
+              >
+                <ListItemAccessories>
+                  <li>
+                    <ListText>
+                      Nom de l'accessoire{' '}
+                      <ListAccessoriesPrice>##€</ListAccessoriesPrice>
+                    </ListText>
+                  </li>
+                  <li>
+                    <ListText>
+                      Nom de l'accessoire{' '}
+                      <ListAccessoriesPrice>##€</ListAccessoriesPrice>
+                    </ListText>
+                  </li>
+                </ListItemAccessories>
+                <ListItemAccessories>
+                  <li>
+                    <ListText>
+                      Nom de l'accessoire{' '}
+                      <ListAccessoriesPrice>##€</ListAccessoriesPrice>
+                    </ListText>
+                  </li>
+                  <li>
+                    <ListText>
+                      Nom de l'accessoire{' '}
+                      <ListAccessoriesPrice>##€</ListAccessoriesPrice>
+                    </ListText>
+                  </li>
+                </ListItemAccessories>
+                <ListItemAccessories>
+                  <li>
+                    <ListText>
+                      Nom de l'accessoire{' '}
+                      <ListAccessoriesPrice>##€</ListAccessoriesPrice>
+                    </ListText>
+                  </li>
+                </ListItemAccessories>
               </List>
               <BasicButton
                 type="button"
@@ -180,6 +267,21 @@ const FormDiscountLabel = styled.label`
 const FormDiscountInput = styled.input`
   border: 1px solid #dce6e5;
   border-radius: 3px;
+`;
+
+const ListItemAccessories = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const ListText = styled.span`
+  color: #000000;
+`;
+
+const ListAccessoriesPrice = styled.span`
+  color: #369c96;
+  padding-left: 16px;
 `;
 
 export default User;

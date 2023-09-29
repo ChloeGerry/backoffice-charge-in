@@ -25,19 +25,12 @@ const Login = () => {
 
   const handleForm = (event: React.FormEvent<HTMLInputElement>): void => {
     event.preventDefault();
-
-    const formData: object = {
-      emailInput: ref?.current[0].value,
-      passwordInput: ref?.current[1].value,
-      checkboxInput: ref?.current[2].value,
-    };
-
     navigate('/dashboard');
   };
 
   return (
     <>
-      <header>
+      <LoginHeader>
         <LoginNavigation>
           <LoginNavigationLink to="/" className="login_navigation_text">
             <LoginIcon src="/assets/left-arrow.svg" />
@@ -45,7 +38,7 @@ const Login = () => {
           </LoginNavigationLink>
           <Logo width="161px" height="35px" />
         </LoginNavigation>
-      </header>
+      </LoginHeader>
       <main>
         <LoginDialog open>
           <LoginModalHeader>
@@ -120,11 +113,17 @@ const Login = () => {
   );
 };
 
+const LoginHeader = styled.header`
+  margin: 42px 56px;
+`;
+
 const LoginNavigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 42px 56px;
+  @media (max-width: 780px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const LoginNavigationLink = styled(Link)`
@@ -153,6 +152,10 @@ const LoginDialog = styled.dialog`
   background-color: #ffffff;
   box-shadow: 0px 0px 16px rgba(167, 184, 186, 0.25);
   padding: 64px 56px;
+  @media (max-width: 860px) {
+    padding: 24px;
+    margin-top: 24px;
+  }
 `;
 
 const LoginModalHeader = styled.div`
@@ -167,6 +170,9 @@ const LoginModalTitle = styled.h1`
   font-weight: 700;
   line-height: 49.6px;
   margin: 0;
+  @media (max-width: 860px) {
+    font-size: 32px;
+  }
 `;
 
 const LoginModalIcon = styled.img`

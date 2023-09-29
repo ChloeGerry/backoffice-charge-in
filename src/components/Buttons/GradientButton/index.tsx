@@ -10,6 +10,8 @@ interface Props {
   background?: string;
   isContainIcon?: true;
   src?: string;
+  gap?: string;
+  flexDirection?: string;
 }
 
 const GradientButton = ({
@@ -22,6 +24,8 @@ const GradientButton = ({
   background,
   isContainIcon,
   src,
+  gap,
+  flexDirection,
 }: Props) => {
   return (
     <GradientButtonStyled
@@ -32,6 +36,8 @@ const GradientButton = ({
       $fontSize={fontSize}
       $lineHeight={lineHeight}
       $background={background}
+      $gap={gap}
+      $flexDirection={flexDirection}
     >
       {text}
       {isContainIcon && <img src={src} />}
@@ -45,10 +51,13 @@ const GradientButtonStyled = styled.button<{
   $padding?: string;
   $fontSize?: string;
   $lineHeight?: string;
+  $gap?: string;
+  $flexDirection?: string;
 }>`
   display: flex;
   align-items: center;
-  gap: 80px;
+  gap: ${({ $gap }) => $gap};
+  flex-direction: ${({ $flexDirection }) => $flexDirection};
   background: ${({ $background }) =>
     $background || 'linear-gradient(#8bdfda, #369c96)'};
   border: none;

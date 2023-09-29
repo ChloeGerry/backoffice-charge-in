@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { useState } from 'react';
 
 import NotificationsSlideshow from '../../NotificationsSlideshow';
+import ProfilSlideshow from '../../ProfilSlideshow';
 
 const Header = () => {
   const [areNotificationsOpen, setNotifications] = useState<boolean>(false);
-
-  console.log('areNotificationsOpen', areNotificationsOpen);
+  const [isProfilDropdownOpen, setisProfilDropdown] = useState<boolean>(false);
 
   return (
     <HeaderWrapper>
@@ -14,15 +14,16 @@ const Header = () => {
         Bonjour,<HeaderUserName> Prénom Nom</HeaderUserName>
       </HeaderUserNameWrapper>
       <HeaderNavigationwrapper>
-        <div>
-          <HeaderNotificationIcon
-            src="/assets/notifications-icon.svg"
-            onClick={() => setNotifications(!areNotificationsOpen)}
-          />
+        <div onClick={() => setNotifications(!areNotificationsOpen)}>
+          <HeaderNotificationIcon src="/assets/notifications-icon.svg" />
           {areNotificationsOpen && <NotificationsSlideshow />}
           <HeaderNotificationNumberIcon src="/assets/notifications-number.svg" />
         </div>
-        <img src="/assets/profil-icon.svg" />
+        <HeaderProfilIcon
+          onClick={() => setisProfilDropdown(!isProfilDropdownOpen)}
+          src="/assets/profil-icon.svg"
+        />
+        {isProfilDropdownOpen && <ProfilSlideshow />}
       </HeaderNavigationwrapper>
     </HeaderWrapper>
   );
@@ -67,6 +68,11 @@ const HeaderNotificationNumberIcon = styled.img`
   top: 37px;
   position: absolute;
   right: 103px;
+  cursor: pointer;
+`;
+
+const HeaderProfilIcon = styled.img`
+  cursor: pointer;
 `;
 
 export default Header;

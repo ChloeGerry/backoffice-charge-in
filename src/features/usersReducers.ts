@@ -3,7 +3,6 @@ import type { RootState } from '../utils/store';
 
 const fetchUserProfile = createAsyncThunk('user/fetchUserProfile', async () => {
   const response = await fetch('http://localhost:5173/usersData.json');
-  console.log('response.json()', response.json());
   return (await response.json()) as UserState;
 });
 
@@ -46,4 +45,4 @@ export default userSlice.reducer;
 
 export { fetchUserProfile };
 
-export const selectUserProfile = (state: RootState) => state?.data;
+export const selectUserProfile = (state: RootState) => state?.data?.usersData;
